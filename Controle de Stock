@@ -1,0 +1,43 @@
+package application;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+import entities.Product;
+
+public class Program{
+	//Program principal//
+	public static void main(String[] args){
+		
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner (System.in);
+		
+		Product product = new Product();
+		System.out.println("Enter product data:");
+		System.out.println("Name:");
+		product.name = sc.nextLine();
+		System.out.println("Price: ");
+		product.price = sc.nextDouble();
+		System.out.print("Quantity in Stock: ");
+		product.quantity = sc.nextInt();
+		//cadstro dos tipos de produtos//
+		System.out.println();
+		System.out.println("product data:" + product);
+		
+		System.out.println();
+		System.out.print("Enter the number of product to be addeb in stock: ");
+		int quantity = sc.nextInt();
+		product.addproducts(quantity);
+		//entrada de produtos em stock//
+		System.out.println();
+		System.out.println("updated data:" + product);
+		//tipo de produto//
+		System.out.println();
+		System.out.println("Enter the number of product to be removed from stock:");
+		quantity = sc.nextInt();
+		product.removeproducts(quantity);
+		//removendo produto do stock//
+		
+		sc.close();
+	}
+}
